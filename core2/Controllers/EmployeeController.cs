@@ -29,26 +29,18 @@ public class EmployeeController : Controller
        
         _logger.LogInformation(DateTime.UtcNow.ToString());
 
-        //calling DbSeeding to generate and view Employees
-
-        //DbSeeding dbSeeding = new DbSeeding();
+  
 
       
-        _empRepo.AllEmployees();
+        var empsList=_empRepo.AllEmployees().ToList();
 
-        return View(_empRepo);
+        return View(empsList);
 
 
     }
 
 
-    public IActionResult Create()
-    {
-        _empRepo.Add()
-    }
-
-    
-
+  
 
 
 
