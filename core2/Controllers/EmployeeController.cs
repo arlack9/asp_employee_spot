@@ -29,15 +29,27 @@ public class EmployeeController : Controller
        
         _logger.LogInformation(DateTime.UtcNow.ToString());
 
-  
-
-      
         var empsList=_empRepo.AllEmployees().ToList();
 
         return View(empsList);
 
 
     }
+
+        public IActionResult Create()
+    {
+        return View();
+    }
+
+    [HttpPost]
+    public IActionResult Create(Employee obj)
+    {
+
+        _empRepo.AddEmployee(obj); //Add new diary entry to database
+       
+        return RedirectToAction("Index");
+    }
+}
 
 
   
@@ -49,4 +61,4 @@ public class EmployeeController : Controller
 
 
    
-}
+

@@ -15,19 +15,26 @@
                 <div class="card-body">
                     <form asp-action="Create" method="post">
 
+                        @* <div class="form-group mb-3">
+                            <label asp-for="Id" class="form-label">Id</label>
+                            <input asp-for="Id" class="form-control" placeholder="Enter Id" />
+                        </div> *@
+
 
                         <div class="form-group mb-3">
-                            <label asp-for="Name" class="form-label">Title</label>
-                            
+                            <label asp-for="Name" class="form-label">Name</label>
+                            <input asp-for="Name" class="form-control" placeholder="Enter Name" />
                         </div>
 
                         <div class="form-group mb-3">
                             <label asp-for="Age" class="form-label">Age</label>
+                            <input asp-for="Age" class="form-control" placeholder="Enter Age" />
                            
                         </div>
 
                         <div class="form-group mb-3">
                             <label asp-for="Dept" class="form-label">Dept</label>
+                            <input asp-for="Dept" class="form-control" placeholder="Enter Department" />
                            
                         </div>
 
