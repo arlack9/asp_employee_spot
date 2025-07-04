@@ -1,6 +1,7 @@
 ﻿using core2.Models;
 using core2.Repository.Data;
 
+//this represents the DAL layer
 namespace core2.Repository;
 
 public class EmployeeRepository : IEmployeeRepository
@@ -21,11 +22,13 @@ public class EmployeeRepository : IEmployeeRepository
         return _db.SaveChanges();
     }
 
-    public int AllEmployees()
+    public List<Employee> AllEmployees()
     {
-        _db.Employees.ToList();
+        
+        
+        return _db.Employees.ToList();
 
-        return _db.SaveChanges();
+      
     }
 
     public int DeleteEmployee(int Id)

@@ -10,6 +10,6 @@ public interface IEmployeeRepository
 
     public int UpdateEmployee(Employee employee);
 
-    public int AllEmployees();
+    public List<Employee> AllEmployees();
 
 }
