@@ -1,5 +1,6 @@
 ﻿using core2.Models;
 using core2.Repository;
+using core2.Repository.Data;
 using Microsoft.AspNetCore.Mvc;
 
 //this represents the BLL layer
@@ -7,6 +8,8 @@ namespace core2.Controllers;
 
 public class EmployeeController : Controller
 {
+
+
 
     //Registering DI with Ilogger for logging 
     private readonly ILogger<EmployeeController> _logger;
@@ -26,27 +29,28 @@ public class EmployeeController : Controller
        
         _logger.LogInformation(DateTime.UtcNow.ToString());
 
-        //UI debug 
+        //calling DbSeeding to generate and view Employees
 
-        //List<Employee> emp = new() {
-        //new() { Id=1, Name ="Arjun" , Age=18, Dept="cs"}
-        //};
+        //DbSeeding dbSeeding = new DbSeeding();
+
+      
         _empRepo.AllEmployees();
 
-        return View(emp);
+        return View(_empRepo);
 
 
     }
 
 
-    //public IActionResult Randomact()
-    //{
-    //   List <Employee> emp = new() {
-    //      new() { Id=1, Name ="Arjun" , Age=18, Dept="cs"}
-    //      };
+    public IActionResult Create()
+    {
+        _empRepo.Add()
+    }
 
-    //    return View(emp);
-    //}
+    
+
+
+
 
 
 
